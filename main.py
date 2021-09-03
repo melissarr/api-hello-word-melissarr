@@ -16,10 +16,9 @@ def hello_world():
       return jsonify({
         'resultado': int(numero1) / int(numero2)
       })
-    else operacao == 'multiplicar':
+    if operacao == 'multiplicar':
       return jsonify({
         'resultado': int(numero1) * int(numero2)
       })
-    
 if__name__=="__main__":
     app.run(debug=True)
