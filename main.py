@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 
-app = Flask(__name__)
+app = Flask(_name_)
 
 @app.route("/")
 def hello_world():
@@ -22,10 +22,10 @@ def hello_world():
       return jsonify({
         'resultado': int(numero_1) / int(numero_2)
       })
-    else: 
-        resultado= "envie dois numeros e escolha se deseja dividir ou multiplicar"
-    return jsonify({'resultado': resultado})
-    })
+    else:
+      return jsonify({
+        'erro': 'operacao nao encontrada',
+      })
 
-if __name__=="__main__":
+if _name=="main_":
     app.run()
