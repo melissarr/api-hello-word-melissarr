@@ -20,10 +20,6 @@ def hello_world():
       return jsonify({
         'resultado': int(numero1) * int(numero2)
       })
-    else:
-      return jsonify({
-        'erro': 'operacao nao reconhecida',
-      })
     
 if__name__=="__main__":
     app.run(debug=True)
