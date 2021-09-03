@@ -7,27 +7,17 @@ def hello_world():
     numero_1 = request.args.get('numero1', None)
     numero_2 = request.args.get('numero2', None)
     operacao = request.args.get('operacao', None)
-
-    if operacao == 'soma':
-      return jsonify({
-        'resultado': int(numero_1) + int(numero_2)
-      })
-    elif operacao == 'subtracacao':
-      return jsonify({
-        'resultado': int(numero_1) - int(numero_2)
-      })
-    elif operacao == 'divisao':
+    if operacao == 'dividir':
       return jsonify({
         'resultado': int(numero_1) / int(numero_2)
       })
-    elif operacao == 'multiplicacao':
+    if operacao == 'multiplicar':
       return jsonify({
         'resultado': int(numero_1) * int(numero_2)
       })
     else:
         resultado = "enive dois numeros e se deseja dividir ou multiplicar."
-      return jsonify({'resultado': resultado})
-      })
+    return jsonify({'resultado': resultado})
 
 if __name__ == "__main":
 app.run(debug=True)
