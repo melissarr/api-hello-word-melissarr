@@ -18,22 +18,22 @@ def hello_world():
             return jsonify({
                 'resultado': int(numero_1) * int(numero_2)
       })
-        if operacao == 'dividir':
-            return jsonify({
-                'resultado': int(numero_1) / int(numero_2)
+    if operacao == 'dividir':
+      return jsonify({
+        'resultado': int(numero_1) / int(numero_2)
       })
-        if operacao == 'somar':
-            return jsonify({
-                'resultado': int(numero_1) + int(numero_2)
+    if operacao == 'subtrair':
+      return jsonify({
+        'resultado': int(numero_1) - int(numero_2)
       })
-        if operacao == 'subtrair':
-            return jsonify({
-                'resultado': int(numero_1) - int(numero_2)
+    if operacao == 'somar':
+      return jsonify({
+        'resultado': int(numero_1) + int(numero_2)
       })
     else:
       return jsonify({
         'erro': 'operacao nao encontrada',
       })
 
-if __name__=="__main__":
+if __name__=="main_":
     app.run()
