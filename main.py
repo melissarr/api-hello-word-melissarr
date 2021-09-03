@@ -14,7 +14,7 @@ def hello_world():
     else:
     if operacao == 'dividir':
       return jsonify({
-        'resultado': int(numero1) / int(numer2)
+        'resultado': int(numero1) / int(numero2)
       })
     else operacao == 'multiplicar':
       return jsonify({
