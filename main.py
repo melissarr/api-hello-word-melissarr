@@ -4,19 +4,35 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    numero1 = request.args.get('numero1', None)
-    numero2 = request.args.get('numero2', None)
-    operacao = request.args.get('operacao', None)
-    if operacao == 'dividir':
+     numero_1 = request.args.get('numero1', None)
+  numero_2 = request.args.get('numero2', None)
+  operacao = request.args.get('operacao', None)
+  if not numero_1 or not numero_2 or not operacao:
+    return jsonify({
+      'mensagem': "Por favor envie dois numeros, e a operacao que deseja realizar.",
+      'ajuda': "?numero1=X&numero2=X&operacao=X",
+      'operacao': 'soma, subtracao, divisao, multiplicacao'
+    })
+
+  else:
+    if operacao == 'soma':
       return jsonify({
-        'resultado': int(numero1) / int(numero2)
+        'resultado': int(numero_1) + int(numero_2)
       })
-    if operacao == 'multiplicar':
+    elif operacao == 'subtracacao':
       return jsonify({
-        'resultado': int(numero1) * int(numero2)
-    else: 
-        resultado= "envie dois numeros e escolha se deseja dividir ou multiplicar"
-    return jsonify({'resultado': resultado})
+        'resultado': int(numero_1) - int(numero_2)
       })
-if__name__=="__main__":
-    app.run(debug=True)
+    elif operacao == 'divisao':
+      return jsonify({
+        'resultado': int(numero_1) / int(numero_2)
+      })
+    elif operacao == 'multiplicacao':
+      return jsonify({
+        'resultado': int(numero_1) * int(numero_2)
+      })
+    else:
+      return jsonify({
+        'erro': 'operacao nao reconhecida',
+      })
+app.run(host='0.0.0.0', port=8080)
