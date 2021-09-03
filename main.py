@@ -22,10 +22,10 @@ def hello_world():
       return jsonify({
         'resultado': int(numero_1) / int(numero_2)
       })
-    else:
-      return jsonify({
-        'erro': 'operacao nao encontrada',
-      })
+    else: 
+        resultado= "envie dois numeros e escolha se deseja dividir ou multiplicar"
+    return jsonify({'resultado': resultado})
+    })
 
 if __name__=="__main__":
     app.run()
