@@ -1,5 +1,6 @@
-from flask import flask, jsonify, request
-app = flask(__name__)
+from flask import Flask, jsonify, request
+
+app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
@@ -26,5 +27,5 @@ def hello_world():
         'erro': 'operacao nao encontrada',
       })
 
-    if __name__ == "__main__":
-        app.run()
+if __name__=="__main__":
+    app.run()
