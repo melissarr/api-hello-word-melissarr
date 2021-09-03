@@ -9,16 +9,15 @@ def hello_world():
     operacao = request.args.get('operacao', None)
     if not numero_1 or not numero_2 or not operacao:
     return jsonify({
-    'mensagem': "Por favor envie dois numeros, e a operacao que deseja realizar.",
-    'operacao': 'divisao, multiplicacao'
+        'mensagem': "Por favor envie dois numeros, e se deseja realizar a operacao multiplicar ou dividir.",
+        'operacao': 'dividir, multiplicar'
     })
-    
     else:
-    if operacao == 'divisao':
+    if operacao == 'dividir':
       return jsonify({
         'resultado': int(numero_1) / int(numero_2)
       })
-    elif operacao == 'multiplicacao':
+    elif operacao == 'multiplicar':
       return jsonify({
         'resultado': int(numero_1) * int(numero_2)
       })
