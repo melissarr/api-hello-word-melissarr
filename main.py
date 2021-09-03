@@ -25,7 +25,7 @@ def hello_world():
     else:
       return jsonify({
         'erro': 'operacao nao encontrada',
-      })
+    })
 
 if _name=="main_":
     app.run()
