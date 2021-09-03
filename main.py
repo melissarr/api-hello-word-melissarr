@@ -7,7 +7,6 @@ def hello_world():
     numero1 = request.args.get('numero1', None)
     numero2 = request.args.get('numero2', None)
     operacao = request.args.get('operacao', None)
-    else:
     if operacao == 'dividir':
       return jsonify({
         'resultado': int(numero1) / int(numero2)
@@ -15,6 +14,9 @@ def hello_world():
     if operacao == 'multiplicar':
       return jsonify({
         'resultado': int(numero1) * int(numero2)
+    else: 
+        resultado= "envie dois numeros e escolha se deseja dividir ou multiplicar"
+    return jsonify({'resultado': resultado})
       })
 if__name__=="__main__":
     app.run(debug=True)
