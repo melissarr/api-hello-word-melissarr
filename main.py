@@ -35,4 +35,6 @@ def hello_world():
       return jsonify({
         'erro': 'operacao nao reconhecida',
       })
+      
+if __name__ == "__main":
 app.run(debug=True)
